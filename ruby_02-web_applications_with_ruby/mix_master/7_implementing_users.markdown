@@ -173,7 +173,7 @@ Now, start up your server again and repeat that process. This time, after you cl
 
 If you type `request` and hit enter, you'll see a large `ActionDispatch::Request` object. This is what is coming back from Spotify's authentication. `request` has an instance variable `env` that returns a hash which we can access like this: `request.env`. 
 
-Note: If you don't want to look at that giant blob of text, you can require pretty print inside of byebug `require pp` and then `pp request`. It's a little easier to look at this way. 
+Note: If you don't want to look at that giant blob of text, you can require pretty print inside of byebug `require 'pp'` and then `pp request`. It's a little easier to look at this way. 
 
 This is still a lot of information. We only need to get the omniauth information which is contained in the key `"omniauth.auth"` (do you see it?). We'll do that like this: `request.env["omniauth.auth"]`. You should see an `OmniAuth::AuthHash` object. 
 
